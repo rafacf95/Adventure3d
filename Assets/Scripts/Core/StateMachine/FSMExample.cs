@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.StateMachine;
 
 public class FSMExample : MonoBehaviour
 {
@@ -17,8 +18,11 @@ public class FSMExample : MonoBehaviour
     {
         stateMachine = new StateMachine<ExampleEnum>();
         stateMachine.Init();
+
         stateMachine.RegisterStates(ExampleEnum.STATE_ONE, new StateBase());
         stateMachine.RegisterStates(ExampleEnum.STATE_TWO, new StateBase());
         stateMachine.RegisterStates(ExampleEnum.STATE_THREE, new StateBase());
+
+        stateMachine.SwitchState(ExampleEnum.STATE_ONE);
     }
 }
