@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 604062387}
   - component: {fileID: 604062386}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,12 +247,12 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 0.99
+  m_Radius: 0.65
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &604062387
 MonoBehaviour:
@@ -266,10 +266,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1ad96d6e1edef40bdd3ff8682f7a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateMachine: {fileID: 1719764835}
   characterController: {fileID: 604062386}
   speed: 15
-  turnSpeed: 25
-  gravity: -9.8
+  turnSpeed: 200
+  gravity: 9.8
+  jumpSpeed: 10
+  inputAxisVertical: 0
 --- !u!4 &604062388
 Transform:
   m_ObjectHideFlags: 0
@@ -278,13 +281,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604062385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 598749261}
   - {fileID: 1719764834}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -553,10 +556,10 @@ Transform:
   m_GameObject: {fileID: 1145766364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.03761, y: -0.68633795, z: -2.2616}
-  m_LocalScale: {x: 1.907, y: 1, z: 1.6563}
+  m_LocalScale: {x: 4.831194, y: 1, z: 4.958633}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719764833
 GameObject:
