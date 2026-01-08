@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.StateMachine;
 
-public class PlayerIdelState : StateBase
+public class PlayerIdleState : StateBase
 {
     public override void OnStateEnter(object o = null)
     {
