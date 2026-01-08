@@ -19,7 +19,7 @@ namespace Core.StateMachine
 
         public void Init()
         {
-            dictionaryState = new Dictionary<T, StateBase>();     
+            dictionaryState = new Dictionary<T, StateBase>();
         }
 
         public void RegisterStates(T typeEnum, StateBase state)
@@ -27,18 +27,25 @@ namespace Core.StateMachine
             dictionaryState.Add(typeEnum, state);
         }
 
-        public void SwitchState(T state)
+        public void SwitchState(T state, object o = null)
         {
+
+            // if(_currentState == dictionaryState[state]) return;
+
             if (_currentState != null) _currentState.OnStateExit();
 
             _currentState = dictionaryState[state];
 
-            _currentState.OnStateEnter();
+            _currentState.OnStateEnter(o);
         }
 
         public void Update()
         {
-            if (_currentState != null) _currentState.OnStateStay();
+            if (_currentState != null)
+            {
+                _currentState.OnStateStay();
+                Debug.Log(CurrentState.ToString());
+            }
         }
     }
 
