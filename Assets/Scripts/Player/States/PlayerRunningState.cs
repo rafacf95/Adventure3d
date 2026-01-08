@@ -22,7 +22,7 @@ public class PlayerRunningState : StateBase
             _player.stateMachine.stateMachine.SwitchState(PlayerStateMachine.PlayerStates.IDLE, _player);
         }
 
-                if (!_player.characterController.isGrounded)
+        if (!_player.characterController.isGrounded)
         {
             _player.stateMachine.stateMachine.SwitchState(PlayerStateMachine.PlayerStates.JUMPING, _player);
         }
