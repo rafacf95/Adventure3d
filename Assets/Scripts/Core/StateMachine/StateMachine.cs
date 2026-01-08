@@ -27,8 +27,6 @@ namespace Core.StateMachine
         public void SwitchState(T state, object o = null)
         {
 
-            // if(_currentState == dictionaryState[state]) return;
-
             if (_currentState != null) _currentState.OnStateExit();
 
             _currentState = dictionaryState[state];
