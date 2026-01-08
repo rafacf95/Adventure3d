@@ -26,10 +26,15 @@ public class PlayerStateMachine : MonoBehaviour
         stateMachine = new StateMachine<PlayerStates>();
         stateMachine.Init();
 
-        stateMachine.RegisterStates(PlayerStates.IDLE, new PlayerIdelState());
-        stateMachine.RegisterStates(PlayerStates.RUNNING, new StateBase());
-        stateMachine.RegisterStates(PlayerStates.JUMPING, new StateBase());
+        stateMachine.RegisterStates(PlayerStates.IDLE, new PlayerIdleState());
+        stateMachine.RegisterStates(PlayerStates.RUNNING, new PlayerRunningState());
+        stateMachine.RegisterStates(PlayerStates.JUMPING, new PlayerJumpingState());
 
-        stateMachine.SwitchState(PlayerStates.IDLE);
+        stateMachine.SwitchState(PlayerStates.IDLE, player);
+    }
+
+    public void Update()
+    {
+        stateMachine.Update();
     }
 }
