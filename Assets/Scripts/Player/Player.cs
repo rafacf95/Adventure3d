@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
     public PlayerStateMachine stateMachine;
     public CharacterController characterController;
     public float speed = 15f;
     public float turnSpeed = 25f;
+
+    [Header("Jump Setup")]
     public float gravity = 9.8f;
     public float jumpSpeed = 15f;
+    public KeyCode jumpkey = KeyCode.Space;
+
+    [Header("Run Setup")]
+    public KeyCode runKey = KeyCode.LeftShift;
+    public float runSpeed = 1.5f;
 
     public float inputAxisVertical;
-
 
     private float _vSpeed = 0f;
 
@@ -26,10 +33,31 @@ public class Player : MonoBehaviour
         if (characterController.isGrounded)
         {
             _vSpeed = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(jumpkey))
             {
                 _vSpeed = jumpSpeed;
             }
+        }
+
+        var isWalking = inputAxisVertical != 0;
+
+
+        if (isWalking)
+        {
+            animator.SetBool("Run", true);
+            if (Input.GetKey(runKey))
+            {
+                speedVector *= runSpeed;
+                animator.speed = runSpeed;
+            }
+            else
+            {
+                animator.speed = 1;
+            }
+        }
+        else
+        {
+            animator.SetBool("Run", false);
         }
 
         _vSpeed -= gravity * Time.deltaTime;
