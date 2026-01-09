@@ -44,20 +44,20 @@ public class Player : MonoBehaviour
 
         if (isWalking)
         {
-            animator.SetBool("Run", true);
+            if (animator != null) animator.SetBool("Run", true);
             if (Input.GetKey(runKey))
             {
                 speedVector *= runSpeed;
-                animator.speed = runSpeed;
+                if (animator != null) animator.speed = runSpeed;
             }
             else
             {
-                animator.speed = 1;
+                if (animator != null) animator.speed = 1;
             }
         }
         else
         {
-            animator.SetBool("Run", false);
+            if (animator != null) animator.SetBool("Run", false);
         }
 
         _vSpeed -= gravity * Time.deltaTime;
