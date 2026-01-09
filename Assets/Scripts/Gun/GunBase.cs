@@ -7,14 +7,17 @@ public class GunBase : MonoBehaviour
     [Header("Setup")]
     public ProjectileBase prefabProjectile;
     public Transform positionToShoot;
+    public float speed = 50f;
     public float timeBetweenShoots = .3f;
+    public List<UIGunUpdater> uIGunUpdaters;
 
     private Coroutine _currentCoroutine;
 
-    public void Shoot()
+    protected virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.SetPositionAndRotation(positionToShoot.position, positionToShoot.rotation);
+        projectile.speed = speed;
     }
 
     protected virtual IEnumerator ShootCoroutine()
