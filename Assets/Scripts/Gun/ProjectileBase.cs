@@ -10,7 +10,11 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        var damageable = collision.transform.GetComponent<IDemageable>();
+
+        damageable?.Damage(damage);
+
+        Destroy(gameObject);
     }
 
     void Awake()
