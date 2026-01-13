@@ -12,9 +12,9 @@ public class GunShootLimit : GunBase
 
     protected override IEnumerator ShootCoroutine()
     {
-        if (_recharging) yield break;
+        // if (_recharging) yield break;
 
-        while (true)
+        while (!_recharging)
         {
             if (_currentShots < maxShoot)
             {
