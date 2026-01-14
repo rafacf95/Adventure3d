@@ -81,4 +81,24 @@ public class EnemyBase : MonoBehaviour, IDemageable
     {
         OnDamage(damage);
     }
+    public void Damage(float damage, Vector3 dir)
+    {
+        transform.DOMove(transform.position - dir, .1f);
+        OnDamage(damage);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Player p = collision.transform.GetComponent<Player>();
+
+        if( p != null)
+        {
+            p.Damage(1);
+        }
+    }
+
+    protected virtual void Update()
+    {
+        
+    }
 }
