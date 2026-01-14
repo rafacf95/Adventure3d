@@ -244,7 +244,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   minDistance: 0.2
-  speed: 15
+  speed: 12
 --- !u!54 &7687136310826304494
 Rigidbody:
   m_ObjectHideFlags: 0
