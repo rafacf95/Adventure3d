@@ -12,8 +12,6 @@ public class ProjectileBase : MonoBehaviour
     {
         var damageable = collision.transform.GetComponent<IDemageable>();
 
-        damageable?.Damage(damage);
-
         if (damageable != null)
         {
             damageable.Damage(damage);
