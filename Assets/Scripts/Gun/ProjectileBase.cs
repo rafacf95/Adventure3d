@@ -14,7 +14,12 @@ public class ProjectileBase : MonoBehaviour
 
         damageable?.Damage(damage);
 
-        // Destroy(gameObject);
+        if (damageable != null)
+        {
+            damageable.Damage(damage);
+            Destroy(gameObject);
+        }
+
     }
 
     void Awake()
