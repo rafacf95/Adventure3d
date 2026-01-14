@@ -23,6 +23,5 @@ public class UIEnemyUpdater : MonoBehaviour
     {
         if (_currTween != null) _currTween.Kill();
         _currTween = uiImage.DOFillAmount(current / max, duration).SetEase(ease);
-        Debug.Log(current / max);
     }
 }
