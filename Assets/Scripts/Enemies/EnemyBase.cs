@@ -10,6 +10,7 @@ public class EnemyBase : MonoBehaviour, IDemageable
     public Collider col;
     public FlashColor flashColor;
     [SerializeField] private float _currentLife;
+    [SerializeField] UIEnemyUpdater _uIEnemyUpdater;
 
     [Header("Start Animation")]
     public float startAnimationDuration = .2f;
@@ -31,6 +32,7 @@ public class EnemyBase : MonoBehaviour, IDemageable
     protected virtual void Init()
     {
         ResetLife();
+        UpdateUi();
     }
 
     protected virtual void Kill()
@@ -48,12 +50,21 @@ public class EnemyBase : MonoBehaviour, IDemageable
     public void OnDamage(float damage)
     {
         _currentLife -= damage;
-        if (flashColor != null) flashColor.Flash();
+        UpdateUi();
+
+        if (flashColor != null)
+            flashColor.Flash();
 
         if (_currentLife <= 0)
         {
             Kill();
         }
+    }
+
+    protected void UpdateUi()
+    {
+        if (_uIEnemyUpdater != null)
+            _uIEnemyUpdater.UpdateValue(startLife, _currentLife);
     }
 
     protected void SpawnAnimation()
