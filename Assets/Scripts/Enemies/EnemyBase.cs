@@ -91,14 +91,11 @@ public class EnemyBase : MonoBehaviour, IDemageable
     {
         Player p = collision.transform.GetComponent<Player>();
 
-        if( p != null)
+        if (p != null)
         {
             p.Damage(1);
         }
     }
 
-    protected virtual void Update()
-    {
-        
-    }
+    protected virtual void Update() { }
 }
