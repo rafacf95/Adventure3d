@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDemageable
 {
     public Animator animator;
     public PlayerStateMachine stateMachine;
@@ -19,9 +19,23 @@ public class Player : MonoBehaviour
     public KeyCode runKey = KeyCode.LeftShift;
     public float runSpeed = 1.5f;
 
+    [Header("Flash")]
+
+    public List<FlashColor> flashColors;
+
     public float inputAxisVertical;
 
     private float _vSpeed = 0f;
+
+    public void Damage(float damage)
+    {
+        flashColors.ForEach(i => i.Flash());
+    }
+
+    public void Damage(float damage, Vector3 dir)
+    {
+        Damage(damage);
+    }
 
     void Update()
     {

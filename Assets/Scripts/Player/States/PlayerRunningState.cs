@@ -6,10 +6,10 @@ using Core.StateMachine;
 public class PlayerRunningState : StateBase
 {
     private Player _player;
-    public override void OnStateEnter(object o = null)
+    public override void OnStateEnter(params object[] objs)
     {
-        base.OnStateEnter(o);
-        _player = (Player)o;
+        base.OnStateEnter(objs[0]);
+        _player = (Player)objs[0];
 
     }
 
