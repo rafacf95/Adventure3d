@@ -11,6 +11,8 @@ public class EnemyBase : MonoBehaviour, IDemageable
     public FlashColor flashColor;
     [SerializeField] private float _currentLife;
     [SerializeField] UIEnemyUpdater _uIEnemyUpdater;
+    [SerializeField] string _tagToCompare = "Player";
+
 
     [Header("Start Animation")]
     public float startAnimationDuration = .2f;
@@ -89,11 +91,14 @@ public class EnemyBase : MonoBehaviour, IDemageable
 
     private void OnCollisionEnter(Collision collision)
     {
-        Player p = collision.transform.GetComponent<Player>();
-
-        if (p != null)
+        if (collision.transform.CompareTag(_tagToCompare))
         {
-            p.Damage(1);
+            var damageable = collision.transform.GetComponent<IDemageable>();
+
+            if (damageable != null)
+            {
+                damageable.Damage(1);
+            }
         }
     }
 

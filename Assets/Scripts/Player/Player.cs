@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDemageable
+public class Player : MonoBehaviour
 {
+
+    [Header("Setup")]
     public Animator animator;
     public PlayerStateMachine stateMachine;
     public CharacterController characterController;
+    public HealthBase healthBase;
+    public List<Collider> colliders;
     public float speed = 15f;
     public float turnSpeed = 25f;
 
@@ -26,15 +30,34 @@ public class Player : MonoBehaviour, IDemageable
     public float inputAxisVertical;
 
     private float _vSpeed = 0f;
+    private bool _alive = true;
 
-    public void Damage(float damage)
+    public void Flash(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
     }
 
-    public void Damage(float damage, Vector3 dir)
+    public void OnKill(HealthBase h)
     {
-        Damage(damage);
+        if (_alive)
+        {
+            _alive = false;
+            animator.SetTrigger("Death");
+            colliders.ForEach(i=> i.enabled = false);
+        }
+    }
+
+    void OnValidate()
+    {
+        if (healthBase == null) healthBase = GetComponent<HealthBase>();
+    }
+
+    void Awake()
+    {
+        OnValidate();
+
+        healthBase.OnDamage += Flash;
+        healthBase.OnKill += OnKill;
     }
 
     void Update()
