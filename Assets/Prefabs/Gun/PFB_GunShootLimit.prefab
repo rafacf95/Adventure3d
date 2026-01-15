@@ -49,6 +49,7 @@ MonoBehaviour:
   positionToShoot: {fileID: 72950340439315385}
   speed: 50
   timeBetweenShoots: 0.3
+  uiFillUpdaters: []
   maxShoot: 5
   timeToRecharge: 1
 --- !u!1 &72950340294745408
@@ -68,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &72950340294745409
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +99,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72950340294745408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
