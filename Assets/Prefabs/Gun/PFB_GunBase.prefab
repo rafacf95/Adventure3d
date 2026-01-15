@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2144575508468066500
 Transform:
   m_ObjectHideFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   positionToShoot: {fileID: 2144575508860364348}
   speed: 50
   timeBetweenShoots: 0.3
+  uiFillUpdaters: []
 --- !u!1 &2144575508849363300
 GameObject:
   m_ObjectHideFlags: 0
