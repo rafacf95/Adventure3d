@@ -9,7 +9,7 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
     public float speed = 50f;
     public float timeBetweenShoots = .3f;
-    public List<UIGunUpdater> uIGunUpdaters;
+    public List<UiFillUpdater> uiFillUpdaters;
 
     private Coroutine _currentCoroutine;
 

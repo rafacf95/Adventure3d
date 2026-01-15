@@ -48,7 +48,7 @@ public class GunShootLimit : GunBase
         while (time < timeToRecharge)
         {
             time += Time.deltaTime;
-            uIGunUpdaters.ForEach(i => i.UpdateValue(time/timeToRecharge));
+            uiFillUpdaters.ForEach(i => i.UpdateValue(time/timeToRecharge));
             yield return new WaitForEndOfFrame();
         }
         _currentShots = 0;
@@ -57,6 +57,6 @@ public class GunShootLimit : GunBase
 
     private void UpdateUI()
     {
-        uIGunUpdaters.ForEach(i => i.UpdateValue(maxShoot, _currentShots));
+        uiFillUpdaters.ForEach(i => i.UpdateValue(maxShoot, _currentShots));
     }
 }

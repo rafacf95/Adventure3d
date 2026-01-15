@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
 
-    public List<UIGunUpdater> uIGunUpdaters;
+    public List<UiFillUpdater> uiFillUpdaters;
     public List<GunBase> gunBases;
 
     public GunBase gunBase;
@@ -31,7 +31,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     private void CreateGun()
     {
         _currentGun = Instantiate(gunBase, gunPosition);
-        _currentGun.uIGunUpdaters = uIGunUpdaters;
+        _currentGun.uiFillUpdaters = uiFillUpdaters;
         _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
     }
 
@@ -42,7 +42,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
             Destroy(_currentGun.gameObject);
         }
         _currentGun = Instantiate(gunType, gunPosition);
-        _currentGun.uIGunUpdaters = uIGunUpdaters;
+        _currentGun.uiFillUpdaters = uiFillUpdaters;
         _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
     }
 
