@@ -43,8 +43,33 @@ public class Player : MonoBehaviour
         {
             _alive = false;
             animator.SetTrigger("Death");
-            colliders.ForEach(i=> i.enabled = false);
+            colliders.ForEach(i => i.enabled = false);
+
+            Invoke(nameof(Revive), 2f);
         }
+    }
+
+    private void Respawn()
+    {
+        if (CheckpointManager.Instance.HasCheckpoint())
+        {
+            transform.position = CheckpointManager.Instance.GetLastCheckpointPosition();
+        }
+    }
+
+    private void TurnOnColliders()
+    {
+        colliders.ForEach(i => i.enabled = true);
+    }
+
+    private void Revive()
+    {
+        healthBase.ResetLife();
+        animator.SetTrigger("Revive");
+        _alive = true;
+        Respawn();
+
+        Invoke(nameof(TurnOnColliders), 1f);
     }
 
     void OnValidate()
