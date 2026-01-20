@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public void Flash(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
+        EffectsManager.Instance.ChangeVignette();
     }
 
     public void OnKill(HealthBase h)
