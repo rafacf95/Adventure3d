@@ -20,9 +20,15 @@ namespace Collectables
 
         private void CreateItems()
         {
-            foreach(var setup in ItemManager.Instance.itemSetups)
+            foreach (var setup in ItemManager.Instance.itemSetups)
             {
                 var item = Instantiate(prefabLayout, container);
+
+                if (setup.itemType == ItemType.LIFE_PACK)
+                {
+                    item.transform.Find("UiButton").gameObject.SetActive(true);
+                }
+
                 item.Load(setup);
                 itemLayouts.Add(item);
             }
