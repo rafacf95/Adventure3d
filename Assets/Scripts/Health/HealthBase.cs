@@ -25,6 +25,7 @@ public class HealthBase : MonoBehaviour, IDemageable
     public void ResetLife()
     {
         _currentLife = startLife;
+        UiUpdate();
     }
 
     protected virtual void Kill()

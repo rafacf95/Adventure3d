@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Singleton;
 
-public class Player : MonoBehaviour
+public class Player : Singleton<Player>
 {
 
     [Header("Setup")]
@@ -79,8 +80,10 @@ public class Player : MonoBehaviour
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
     }
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         OnValidate();
 
         healthBase.OnDamage += Flash;

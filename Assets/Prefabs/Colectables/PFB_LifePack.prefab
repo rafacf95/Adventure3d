@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8620044655658514638}
   - component: {fileID: 8620044655658514737}
   m_Layer: 0
-  m_Name: PFB_Coin
+  m_Name: PFB_LifePack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be3e54440becc44b9a922e9264f6de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 1
   compareTag: Player
   particles: {fileID: 0}
   timeToHide: 1
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 02649bcd85578274994a8fab9c5705d3, type: 2}
+      objectReference: {fileID: 2100000, guid: 9939ce72b203cba47a785e5818302b37, type: 2}
     - target: {fileID: 919132149155446097, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: m_Name
       value: MDL_Coin
