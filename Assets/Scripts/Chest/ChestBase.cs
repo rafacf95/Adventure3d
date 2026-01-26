@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -18,6 +16,9 @@ public class ChestBase : MonoBehaviour
     public float tweenDuration = .2f;
     public Ease tweenEase = Ease.OutBack;
 
+    [Space]
+    public ChestItemBase chestItem;
+
     private float _startScale;
     private bool _chestOpened = false;
 
@@ -35,6 +36,18 @@ public class ChestBase : MonoBehaviour
         anim.SetTrigger(triggerOpen);
         _chestOpened = true;
         HideNotification();
+        Invoke(nameof(ShowItem), .2f);
+    }
+
+    private void ShowItem()
+    {
+        chestItem.ShowItem();
+        Invoke(nameof(CollectItem), 1f);
+    }
+
+    private void CollectItem()
+    {
+        chestItem.Collect();
     }
 
     void OnTriggerEnter(Collider other)
