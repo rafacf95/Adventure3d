@@ -75,6 +75,19 @@ public class Player : Singleton<Player>
         Invoke(nameof(TurnOnColliders), 1f);
     }
 
+    public void ChangeSpeed(float boostedSpeed, float duration)
+    {
+        StartCoroutine(ChangeSpeedCoroutine(boostedSpeed, duration));
+    }
+
+    IEnumerator ChangeSpeedCoroutine(float boostedSpeed, float duration)
+    {
+        var defaultSpeed = speed;
+        speed = boostedSpeed;
+        yield return new WaitForSeconds(duration);
+        speed = defaultSpeed;
+    }
+
     void OnValidate()
     {
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
