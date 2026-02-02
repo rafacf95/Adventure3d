@@ -11,6 +11,7 @@ public class FlashColor : MonoBehaviour
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Color color = Color.red;
     public float duration = .2f;
+    public string colorParameter = "_EmissionColor";
 
     private Color _defaultColor;
     private Tween _currTween;
@@ -18,22 +19,23 @@ public class FlashColor : MonoBehaviour
     void OnValidate()
     {
         if (meshRenderer == null) meshRenderer = GetComponent<MeshRenderer>();
-        if (skinnedMeshRenderer == null) skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        if (skinnedMeshRenderer == null && meshRenderer == null) skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
     }
     void Start()
     {
-        _defaultColor = meshRenderer.material.GetColor("_EmissionColor");
+        if (meshRenderer != null)
+            _defaultColor = meshRenderer.material.GetColor(colorParameter);
     }
 
     public void Flash()
     {
         if (meshRenderer != null && !_currTween.IsActive())
         {
-            _currTween = meshRenderer.material.DOColor(color, "_EmissionColor", duration).SetLoops(2, LoopType.Yoyo);
+            _currTween = meshRenderer.material.DOColor(color, colorParameter, duration).SetLoops(2, LoopType.Yoyo);
         }
         else if (skinnedMeshRenderer != null && !_currTween.IsActive())
         {
-            _currTween = skinnedMeshRenderer.material.DOColor(color, "_EmissionColor", duration).SetLoops(2, LoopType.Yoyo);
+            _currTween = skinnedMeshRenderer.material.DOColor(color, colorParameter, duration).SetLoops(2, LoopType.Yoyo);
         }
     }
 }

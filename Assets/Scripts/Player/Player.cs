@@ -36,6 +36,7 @@ public class Player : Singleton<Player>
 
     private float _vSpeed = 0f;
     private bool _alive = true;
+    private bool _jumping = false;
 
     public void Flash(HealthBase h)
     {
@@ -108,7 +109,7 @@ public class Player : Singleton<Player>
     public void ChangeTexture(ClothSetup setup, float duration)
     {
         StartCoroutine(ChangeTextureCoroutine(setup, duration));
-        
+
     }
 
     IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
@@ -127,7 +128,7 @@ public class Player : Singleton<Player>
     protected override void Awake()
     {
         base.Awake();
-        
+
         OnValidate();
 
         healthBase.OnDamage += Flash;
@@ -143,10 +144,22 @@ public class Player : Singleton<Player>
 
         if (characterController.isGrounded)
         {
+
+            if (_jumping)
+            {
+                _jumping = false;
+                animator.SetTrigger("Land");
+            }
+
             _vSpeed = 0;
             if (Input.GetKeyDown(jumpkey))
             {
                 _vSpeed = jumpSpeed;
+                if (!_jumping)
+                {
+                    _jumping = true;
+                    animator.SetTrigger("Jump");
+                }
             }
         }
 
