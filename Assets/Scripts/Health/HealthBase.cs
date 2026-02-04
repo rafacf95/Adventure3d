@@ -13,6 +13,11 @@ public class HealthBase : MonoBehaviour, IDemageable
     [SerializeField] private float _currentLife;
     [SerializeField] private bool _destroyOnKill = true;
 
+    public float CurrentLife
+    {
+        get { return _currentLife; }
+    }
+
     private void Awake()
     {
         Init();
@@ -60,6 +65,7 @@ public class HealthBase : MonoBehaviour, IDemageable
             UiFillUpdater.UpdateValue((float)_currentLife / startLife);
         }
     }
+
 
 #if UNITY_EDITOR
 
