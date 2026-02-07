@@ -929,6 +929,7 @@ MonoBehaviour:
     coins: 0
     lifePack: 0
     playerHealth: 0
+    playerPosition: {x: 0, y: 0, z: 0}
     clothSetup:
       clothType: 0
       texture: {fileID: 0}
