@@ -39,6 +39,7 @@ public class CheckpointBase : MonoBehaviour
         //     PlayerPrefs.SetInt(_checkpointKey, key);
 
         CheckpointManager.Instance.SaveCheckpoint(key);
+        SaveManager.Instance.SaveGame(1, key);
         _active = true;
     }
 }

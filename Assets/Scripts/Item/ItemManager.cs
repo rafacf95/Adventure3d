@@ -19,6 +19,13 @@ namespace Collectables
         void Start()
         {
             Reset();
+            LoadFromFile();
+        }
+
+        private void LoadFromFile()
+        {
+            AddByType(ItemType.COIN, (int) SaveManager.Instance.SavedValues.coins);
+            AddByType(ItemType.LIFE_PACK, (int) SaveManager.Instance.SavedValues.lifePack);
         }
 
         public ItemSetup GetItemByType(ItemType itemType)

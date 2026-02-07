@@ -37,6 +37,11 @@ public class Player : Singleton<Player>
     private float _vSpeed = 0f;
     private bool _alive = true;
     private bool _jumping = false;
+    private ClothSetup _currentClothSetup;
+    public ClothSetup CurrentClothSetup
+    {
+        get { return _currentClothSetup; }
+    }
 
     public void Flash(HealthBase h)
     {
@@ -109,15 +114,26 @@ public class Player : Singleton<Player>
     public void ChangeTexture(ClothSetup setup, float duration)
     {
         StartCoroutine(ChangeTextureCoroutine(setup, duration));
-
     }
 
     IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
     {
         clothChanger.ChangeTexture(setup);
+        _currentClothSetup = setup;
         yield return new WaitForSeconds(duration);
         clothChanger.ResetTexture();
+        _currentClothSetup = ClothManager.Instance.GetSetupByType(ClothType.BASE);
     }
+
+    #region LOAD
+
+    private void LoadFromFile()
+    {
+        healthBase.CurrentLife = SaveManager.Instance.SavedValues.playerHealth;
+        _currentClothSetup = SaveManager.Instance.SavedValues.clothSetup;
+    }
+
+    #endregion
 
 
     void OnValidate()
@@ -133,6 +149,13 @@ public class Player : Singleton<Player>
 
         healthBase.OnDamage += Flash;
         healthBase.OnKill += OnKill;
+
+        if (_currentClothSetup == null)
+        {
+            _currentClothSetup = ClothManager.Instance.GetSetupByType(ClothType.BASE);
+        }
+
+        LoadFromFile();
     }
 
     void Update()

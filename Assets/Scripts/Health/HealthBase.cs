@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBase : MonoBehaviour, IDemageable
@@ -16,6 +14,11 @@ public class HealthBase : MonoBehaviour, IDemageable
     public float CurrentLife
     {
         get { return _currentLife; }
+        set
+        {
+            if (value <= 0) value = 1;
+            _currentLife = value;
+        }
     }
 
     private void Awake()

@@ -4672,7 +4672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothSetups:
   - clothType: 0
-    texture: {fileID: 2800000, guid: c912242e5e8e88c4ca8e8bbae45039fd, type: 3}
+    texture: {fileID: 2800000, guid: 8d0f7b33a4f3bf5459574270675b2718, type: 3}
   - clothType: 1
     texture: {fileID: 2800000, guid: 56ccf54449f4956419724acad236125a, type: 3}
   - clothType: 2
@@ -6335,7 +6335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 775729938}
-  texture: {fileID: 0}
   shaderIdName: _EmissionMap
 --- !u!1001 &950019377
 PrefabInstance:
@@ -20556,6 +20555,10 @@ PrefabInstance:
     - target: {fileID: 5641698901217452968, guid: fea8c895823426443914aaf26b784107, type: 3}
       propertyPath: m_Name
       value: ClothItemBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641698901217452968, guid: fea8c895823426443914aaf26b784107, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5641698901217452971, guid: fea8c895823426443914aaf26b784107, type: 3}
       propertyPath: m_RootOrder

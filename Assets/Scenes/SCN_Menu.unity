@@ -420,7 +420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 411345177}
   - component: {fileID: 411345179}
-  - component: {fileID: 411345178}
   m_Layer: 0
   m_Name: SPR_Foreground
   m_TagString: Untagged
@@ -442,18 +441,6 @@ Transform:
   m_Father: {fileID: 1149129669}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &411345178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411345176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90539df1cd5704abcb25fec9f3f5f84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1971053207 &411345179
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -935,6 +922,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d931b6e283f5f41b7474bbb7bd438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastLevel: 0
+  _saveSetup:
+    lastLevel: 0
+    lastCheckpoint: 0
+    coins: 0
+    lifePack: 0
+    playerHealth: 0
+    clothSetup:
+      clothType: 0
+      texture: {fileID: 0}
 --- !u!4 &842416445
 Transform:
   m_ObjectHideFlags: 0
@@ -1718,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Save
       objectReference: {fileID: 0}
+    - target: {fileID: 5571249414189866990, guid: a2064a307df482041b8176cd7322a219, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6020782972466218432, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_text
       value: Save
@@ -1740,7 +1741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1748,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1780,11 +1781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 571.94324
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -115.82745
       objectReference: {fileID: 0}
     - target: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2107,7 +2108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1216257642}
   - component: {fileID: 1216257644}
-  - component: {fileID: 1216257643}
   m_Layer: 0
   m_Name: SPR_Floor
   m_TagString: Untagged
@@ -2129,18 +2129,6 @@ Transform:
   m_Father: {fileID: 1149129669}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1216257643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216257641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90539df1cd5704abcb25fec9f3f5f84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1971053207 &1216257644
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -2586,7 +2574,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457851368}
-  - component: {fileID: 1457851369}
   m_Layer: 0
   m_Name: Menu Buttons
   m_TagString: Untagged
@@ -2608,18 +2595,6 @@ Transform:
   m_Father: {fileID: 799472636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1457851369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457851367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 233280eb59adad74b92c0e33ba11c956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1500100153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,7 +3672,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1812774650}
   - component: {fileID: 1812774652}
-  - component: {fileID: 1812774651}
   m_Layer: 0
   m_Name: SPR_Background
   m_TagString: Untagged
@@ -3719,18 +3693,6 @@ Transform:
   m_Father: {fileID: 1149129669}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1812774651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812774649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90539df1cd5704abcb25fec9f3f5f84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1971053207 &1812774652
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
