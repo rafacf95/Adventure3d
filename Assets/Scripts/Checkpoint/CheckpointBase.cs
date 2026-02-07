@@ -9,6 +9,12 @@ public class CheckpointBase : MonoBehaviour
 
     // private string _checkpointKey = "ChekpointKey";
     private bool _active = false;
+
+    void Awake()
+    {
+        LoadCheckpoint();
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!_active && other.transform.CompareTag("Player"))
@@ -39,7 +45,17 @@ public class CheckpointBase : MonoBehaviour
         //     PlayerPrefs.SetInt(_checkpointKey, key);
 
         CheckpointManager.Instance.SaveCheckpoint(key);
-        SaveManager.Instance.SaveGame(1, key);
+        SaveManager.Instance.SaveGame(1, key, Player.Instance.transform.position);
         _active = true;
+    }
+
+    private void LoadCheckpoint()
+    {
+        var lastKey = SaveManager.Instance.SavedValues.lastCheckpoint;
+        if (lastKey == key)
+        {
+            _active = true;
+            TurnOn();
+        }
     }
 }

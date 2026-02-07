@@ -57,6 +57,11 @@ public class SaveManager : Singleton<SaveManager>
         _saveSetup.clothSetup = Player.Instance.CurrentClothSetup;
     }
 
+    public void SavePlayerPosition(Vector3 position)
+    {
+        _saveSetup.playerPosition = position;
+    }
+
     private void CreateFile(string json)
     {
         File.WriteAllText(_path, json);
@@ -68,12 +73,13 @@ public class SaveManager : Singleton<SaveManager>
         CreateFile(toJson);
     }
 
-    public void SaveGame(int level, int ChekpointKey)
+    public void SaveGame(int level, int ChekpointKey, Vector3 playerPosition)
     {
         SaveLastLevel(level);
         SaveLastChekpoint(ChekpointKey);
         SaveItems();
         SavePlayerStatus();
+        SavePlayerPosition(playerPosition);
 
         SaveToFile();
     }
@@ -105,5 +111,6 @@ public class SaveSetup
     public float coins;
     public float lifePack;
     public float playerHealth;
+    public Vector3 playerPosition;
     public Cloth.ClothSetup clothSetup;
 }

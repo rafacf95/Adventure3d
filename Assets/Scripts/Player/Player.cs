@@ -131,6 +131,12 @@ public class Player : Singleton<Player>
     {
         healthBase.CurrentLife = SaveManager.Instance.SavedValues.playerHealth;
         _currentClothSetup = SaveManager.Instance.SavedValues.clothSetup;
+
+        var pos = SaveManager.Instance.SavedValues.playerPosition;
+        if (!pos.Equals(Vector3.zero))
+        {
+            transform.position = pos;
+        }
     }
 
     #endregion
