@@ -30,7 +30,7 @@ de jogos na Unity, durante as aulas da plataforma **EBAC**.
 Andar: **WASD**\
 Pular: **Barra de espaço**\
 Atirar: **X**\
-Interagir: **Z**\
+Interagir: **Z**
 
 ## Estrutura do Repositório
 
