@@ -14,7 +14,7 @@ public class CheckpointBase : MonoBehaviour
     {
         LoadCheckpoint();
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (!_active && other.transform.CompareTag("Player"))
