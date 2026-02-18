@@ -27,10 +27,10 @@ de jogos na Unity, durante as aulas da plataforma **EBAC**.
 -   Git para controle de versão
 
 ## Controles
-Andar: **WASD**
-Pular: **Barra de espaço**
-Atirar: **X**
-Interagir: **Z**
+Andar: **WASD**\
+Pular: **Barra de espaço**\
+Atirar: **X**\
+Interagir: **Z**\
 
 ## Estrutura do Repositório
 
