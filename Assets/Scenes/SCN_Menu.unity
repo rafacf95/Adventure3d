@@ -1844,7 +1844,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4173452881432518076, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4173452881432518076, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1853,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 4173452881432518076, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195891258}
     - target: {fileID: 4173452881432518076, guid: a2064a307df482041b8176cd7322a219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1963,6 +1963,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7842208042593094933, guid: a2064a307df482041b8176cd7322a219, type: 3}
   m_PrefabInstance: {fileID: 1195891255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1195891257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5571249414189866990, guid: a2064a307df482041b8176cd7322a219, type: 3}
+  m_PrefabInstance: {fileID: 1195891255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1195891258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195891257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733262b3916266a48b02377532dbe68f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1199613494
 GameObject:
   m_ObjectHideFlags: 0
