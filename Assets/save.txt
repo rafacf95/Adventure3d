@@ -1,0 +1,18 @@
+{
+    "lastLevel": 1,
+    "lastCheckpoint": 1,
+    "coins": 0.0,
+    "lifePack": 0.0,
+    "playerHealth": 10.0,
+    "playerPosition": {
+        "x": 413.3977355957031,
+        "y": -6.948369026184082,
+        "z": 25.325563430786134
+    },
+    "clothSetup": {
+        "clothType": 0,
+        "texture": {
+            "instanceID": 0
+        }
+    }
+}

@@ -50,6 +50,7 @@ MonoBehaviour:
   speed: 50
   timeBetweenShoots: 0.3
   uiFillUpdaters: []
+  sfxType: 3
   maxShoot: 5
   timeToRecharge: 1
   amountPerShoot: 4

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Singleton;
+using UnityEngine.Audio;
 
 public class SFXPool : Singleton<SFXPool>
 {
     public int poolSize = 10;
+
+    [SerializeField]
+    AudioMixerGroup sfxMixerGroup;
     private List<AudioSource> _audioSourceList;
     private int _index = 0;
 
@@ -30,11 +34,16 @@ public class SFXPool : Singleton<SFXPool>
     {
         GameObject sfxPool = new GameObject("SFXpool");
         sfxPool.transform.SetParent(gameObject.transform);
-        _audioSourceList.Add(sfxPool.AddComponent<AudioSource>());
+        var audioSource = sfxPool.AddComponent<AudioSource>();
+        audioSource.volume = .5f;
+        audioSource.outputAudioMixerGroup = sfxMixerGroup;
+        _audioSourceList.Add(audioSource);
     }
 
     public void Play(SFXType sfxType)
     {
+        if (sfxType == SFXType.NONE) return;
+
         var sfx = SoundManager.Instance.GetSFXByType(sfxType);
 
         _audioSourceList[_index].clip = sfx.audioClip;

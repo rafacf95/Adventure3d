@@ -16,7 +16,8 @@ namespace Collectables
         public GameObject graphItem;
 
         [Header("Sounds")]
-        public AudioSource audioSource;
+        // public AudioSource audioSource;
+        public SFXType sfxType;
 
         bool _collected = false;
 
@@ -31,6 +32,11 @@ namespace Collectables
         private void HideObject()
         {
             gameObject.SetActive(false);
+        }
+
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(sfxType);
         }
 
         protected virtual void Collect()
@@ -54,7 +60,8 @@ namespace Collectables
                     particles.Play();
                 }
             }
-            if (audioSource != null) audioSource.Play();
+            PlaySFX();
+            // if (audioSource != null) audioSource.Play();
 
             ItemManager.Instance.AddByType(itemType);
         }

@@ -131,6 +131,7 @@ MonoBehaviour:
   speed: 50
   timeBetweenShoots: 0.3
   uiFillUpdaters: []
+  sfxType: 3
 --- !u!1 &2144575508849363300
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,13 +11,24 @@ public class GunBase : MonoBehaviour
     public float timeBetweenShoots = .3f;
     public List<UiFillUpdater> uiFillUpdaters;
 
+    [Header("Audio Setup")]
+    public SFXType sfxType;
+
     private Coroutine _currentCoroutine;
+
+
+    private void PlaySFX(SFXType sfxType)
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
 
     protected virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.SetPositionAndRotation(positionToShoot.position, positionToShoot.rotation);
         projectile.speed = speed;
+
+        PlaySFX(sfxType);
     }
 
     protected virtual IEnumerator ShootCoroutine()
