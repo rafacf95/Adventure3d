@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Core.Singleton;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 namespace Collectables
