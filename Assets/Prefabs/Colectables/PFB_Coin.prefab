@@ -63,7 +63,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   timeToHide: 1
   graphItem: {fileID: 8620044655664163388}
-  audioSource: {fileID: 0}
+  sfxType: 1
 --- !u!1 &8620044655664163388
 GameObject:
   m_ObjectHideFlags: 0

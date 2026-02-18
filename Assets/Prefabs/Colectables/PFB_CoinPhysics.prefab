@@ -146,7 +146,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   timeToHide: 1
   graphItem: {fileID: 7646357136888006573}
-  audioSource: {fileID: 0}
+  sfxType: 1
 --- !u!54 &2531054394749419494
 Rigidbody:
   m_ObjectHideFlags: 0

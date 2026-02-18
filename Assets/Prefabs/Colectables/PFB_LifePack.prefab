@@ -63,7 +63,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   timeToHide: 1
   graphItem: {fileID: 8620044655664163388}
-  audioSource: {fileID: 0}
+  sfxType: 2
 --- !u!1 &8620044655664163388
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9939ce72b203cba47a785e5818302b37, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: m_Name
       value: MDL_Coin
